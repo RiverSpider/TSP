@@ -13,16 +13,16 @@ visited[0] = True
 dist = 0
 for i in range(n-1):
     min_dist = sys.maxsize
-    next_node = -1
-    current_node = path[-1]
+    next = -1
+    current = path[-1]
         
     for j in range(n):
-        if not visited[j] and graph[current_node][j] < min_dist:
-            min_dist = graph[current_node][j]
+        if not visited[j] and graph[current][j] < min_dist:
+            min_dist = graph[current][j]
             dist += min_dist
-            next_node = j  
-    visited[next_node] = True
-    path.append(next_node)
+            next = j  
+    visited[next] = True
+    path.append(next)
         
 path.append(0)
 print(path, dist)
